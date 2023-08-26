@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {text-align: center; color: darkblue}
+        p {text-align: center; color: darkblue}
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
+</head>
+    <body>
+        <body style="background-color:orange;">
+        <title>Registration Tracker</title>
+        <h1>Registration Tracker</h1>
+        <p>Input your interested courses using the form below. Data will be refreshed hourly.</p>
+        <form action="#" method="post" style="text-align: center;">
+            <label for="subject" style="color:darkblue">Subject: </label>
+            <input type="text" name="subject">
+            <label for="course number" style="color:darkblue">Course number: </label>
+            <input type="text" name="course number">
+            <label for="crn" style="color:darkblue">CRN: </label>
+            <input type="text" name="crn">
+            <input type="submit" value="Submit">
+        </form>
+
+        <br></br>
+
+        <table style="width:80%; align-self: center; margin-left:auto; margin-right:auto">
+            <tr>
+                <th>Subject</th>
+                <th>Course Number</th>
+                <th>CRN</th>
+                <th>Section</th>
+                <th>Availability</th>
+            </tr>
+            {% for course in content %}
+            <tr>
+                {% for e in course %}
+                <th>{{e}}</th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </body>
+</html> 
